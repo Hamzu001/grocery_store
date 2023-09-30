@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import CartContext from "../../../context/CartContext";
 
-const cart = ({ params }) => {
+const Cart = ({ params }) => {
   const { addItemToCart } = useContext(CartContext);
 
   const [data, setData] = useState([]);
@@ -169,4 +169,4 @@ const cart = ({ params }) => {
   );
 };
 
-export default cart;
+export default Cart;
