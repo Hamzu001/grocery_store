@@ -6,7 +6,7 @@ const ProductCards = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/getproducts")
+    fetch("/api/getproducts")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

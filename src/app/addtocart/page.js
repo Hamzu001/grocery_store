@@ -1,7 +1,6 @@
 "use client";
 import React, { useContext } from "react";
 import CartContext from "../../../context/CartContext";
-import Link from "next/link";
 
 const AddToCart = () => {
   const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext);

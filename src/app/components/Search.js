@@ -8,7 +8,7 @@ const Search = () => {
 
   const searchHandler = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/api/hello")
+    fetch("/api/getproducts")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
