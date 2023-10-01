@@ -17,7 +17,7 @@ const Search = () => {
   };
   return (
     <>
-      <div className="flex pl-16 justify-center">
+      <div className="flex p-4 justify-center">
         <form className=" w-[600px]">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import CartContext from "../../../context/CartContext";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
@@ -13,8 +14,8 @@ const Navbar = () => {
   return (
     <div>
       <header className="text-gray-600  body-font">
-        <div className="container mx-auto flex flex-wrap p-4  md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900  md:mb-0">
+        <div className="container mx-auto flex flex-wrap p-4 md:flex-row items-center">
+          <Link href="/" className="flex title-font font-medium items-center text-gray-900  md:mb-0">
             <img
               alt="ecommerce"
               className="h-12 ml-3"
@@ -23,7 +24,7 @@ const Navbar = () => {
             <span className="ml-3 text-blue-500 cursor-pointer text-[26px]">
               Grocery Store
             </span>
-          </a>
+          </Link>
 
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center justify-center">
             {/* <form className=" w-[600px]">
@@ -65,7 +66,7 @@ const Navbar = () => {
               </div>
             </form> */}
           </nav>
-          <div className="mr-2">
+          <div className=" sm:ml-6 md:ml-16 pl-6 mr-2">
             <button
               onClick={() => router.push("/addtocart")}
               type="button"

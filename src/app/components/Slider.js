@@ -19,7 +19,7 @@ const Slider = () => {
   // w-[1220px] transition-all  ml-6 my-3 h-[70vh] max-w-[1400px] relative duration-500  group
   return (
     <>
-      <div className="w-[1220px] transition-all  ml-6 my-4 h-[70vh] max-w-[1400px] relative duration-500  group">
+      <div className=" lg:w-full md:w-[800px] p-4 sm:w-[400px] transition-all my-4 h-[70vh] max-w-[1400px] relative duration-500  group">
         <div
           style={{ backgroundImage: `url(${slides[currIndex].url})` }}
           className="w-full h-full duration-500 bg-center bg-cover rounded-2xl flex items-end overflow-hidden"
@@ -27,12 +27,12 @@ const Slider = () => {
           {/* /////////--Left-Icon--////////// */}
           <div
             onClick={prevSlide}
-            className="hidden group-hover:block duration-500 transition-all  absolute top-[50%] -translate-x-0 -translate-y-[-50%] left-3 text-2xl rounded-full p-3 bg-blue-500 text-white cursor-pointer"
+            className="hidden group-hover:block duration-500 transition-all  absolute top-[50%] -translate-x-0 -translate-y-[-50%] left-3 text-2xl rounded-full p-3 bg-blue-300 text-white cursor-pointer"
           ></div>
           {/* /////////--Riight-Icon--////////// */}
           <div
             onClick={nextSlide}
-            className="hidden group-hover:block absolute transition-all top-[50%] -translate-x-0 -translate-y-[-50%] right-3 text-2xl rounded-full p-3 bg-blue-500 text-white cursor-pointer"
+            className="hidden group-hover:block absolute transition-all top-[50%] -translate-x-0 -translate-y-[-50%] right-3 text-2xl rounded-full p-3 bg-blue-300 text-white cursor-pointer"
           ></div>
         </div>
       </div>
