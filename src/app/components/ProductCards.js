@@ -1,15 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ProductModel from "./ProductModel";
+import Loading from "./Loading";
 
 const ProductCards = (props) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch("/api/getproducts")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+        setLoading(false);
         // console.log({"products":data})
       });
   }, []);
@@ -22,13 +26,23 @@ const ProductCards = (props) => {
             <div className="flex ml-10">
               <p className=" text-[30px]">{props.title}</p>
             </div>
+
+            {loading ? (
+              <div className="flex justify-center">
+                <Loading />
+              </div>
+            ) : null}
+
             <div className="container px-5 py-10 mx-auto">
               <div className="flex flex-wrap -m-4">
                 {data.map((i, k) => {
                   // console.log(i)
                   if (props.title === i.categorey) {
                     return (
-                      <div key={i._id} className="lg:w-1/4  md:w-1/2 p-4 w-full">
+                      <div
+                        key={i._id}
+                        className="lg:w-1/4  md:w-1/2 p-4 w-full"
+                      >
                         <a className="block relative h-48 rounded overflow-hidden">
                           <img
                             alt="ecommerce"
@@ -53,7 +67,9 @@ const ProductCards = (props) => {
                               category={i.categorey}
                             />
                           </h1>
-                          <h3 className="mt-1 text-center">Price: ${i.price}</h3>
+                          <h3 className="mt-1 text-center">
+                            Price: ${i.price}
+                          </h3>
                         </div>
                       </div>
                     );

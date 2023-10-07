@@ -1,18 +1,23 @@
 "use client"
 import React, { useState } from "react";
 import SearchDetails from "./SearchDetails";
+import Loading from "./Loading";
 
 const Search = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
 
     const searchHandler = async (e) => {
       e.preventDefault()
       try {
+        setLoading(true)
         const res = await fetch(`/api/searchproducts?query=${query}`)
         const result = await res.json()
         // console.log(result)
         setData(result)
+        setLoading(false)
 
       } catch (error) {
         console.log(error);
@@ -59,6 +64,10 @@ const Search = () => {
           </div>
         </form>
       </div>
+
+      {loading?<div className="flex justify-center"> 
+      <Loading/>
+      </div>:null}
 
       {data.length>0 && <SearchDetails data={data}/>}
       
